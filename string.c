@@ -7,14 +7,14 @@ static void print(String* this) {
     fwrite(this->buffer, 1, this->size, stdout);
 }
 
-static String new(const char* message, size_t size) {
+static String new(const char* buffer, size_t size) {
     String this = {
         .size = size + 1,
         .buffer = malloc(size + 1),
         .print = &print
     };
 
-    memcpy((char*)this.buffer, message, size);
+    memcpy((char*)this.buffer, buffer, size);
     *((char*)this.buffer + size) = '\0';
 
     return this;
