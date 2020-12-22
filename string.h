@@ -8,7 +8,7 @@ typedef struct String {
 } String;
 
 extern const struct StringClass {
-    String (*new)(const char* message, size_t len);
+    String (*new)(const char* message, size_t size);
     void (*dispose)(String* instance);
 } StringClass;
 
