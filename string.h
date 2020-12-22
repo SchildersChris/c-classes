@@ -9,7 +9,7 @@ typedef struct String {
 
 extern const struct StringClass {
     String (*new)(const char* message, size_t size);
-    void (*dispose)(String* instance);
+    void (*destruct)(String* instance);
 } StringClass;
 
 #endif //CLASSES_STRING_H

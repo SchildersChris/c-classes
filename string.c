@@ -20,8 +20,8 @@ static String new(const char* buffer, size_t size) {
     return this;
 }
 
-static void dispose(String* instance) {
+static void destruct(String* instance) {
     free((char*)instance->buffer);
 }
 
-const struct StringClass StringClass = { .new = &new, .dispose = &dispose };
+const struct StringClass StringClass = { .new = &new, .destruct = &destruct };
