@@ -4,7 +4,7 @@
 #include "string.h"
 
 static void print(String* this) {
-    fwrite(this->buffer, 1, this->size, stdout);
+    fwrite(this->buffer, 1, this->size - 1, stdout);
 }
 
 static String new(const char* buffer, size_t size) {
